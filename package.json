@@ -1,0 +1,21 @@
+{
+  "name": "economyCrawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/gulp": "^4.0.13",
+    "@types/jquery": "^3.5.16",
+    "firebase": "^10.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "node-telegram-bot-api": "^0.61.0",
+    "playwright": "^1.36.0",
+    "ts-node": "^10.9.1"
+  }
+}
