@@ -20,17 +20,23 @@ task("test",async (done) => {
         });
         return news.eq(0).attr("href");
     });
+
+    await page.goto("https://www.bloomberg.co.kr/blog/");
+    const bloombergNews = await page.evaluate(() => {
+        return jQuery(".h3-regular-8 a").eq(0).attr("href");
+    });
+
     // 텔레그램봇 시작
     const bot = new TelegramBot(token, {polling: false});
 
      // 텔레그램 발송
-     const cardList = [hankyungNews,mkNews];
+     const cardList = [hankyungNews,mkNews,bloombergNews];
      for(let card of cardList){
         bot.sendMessage(chatId, "[NEWS] "+card);
     };
 
-    // await new Promise((resolve)=>setTimeout(resolve,660000)); // 11분 후 닫음 (텔레그램은 연결 후 10분 이내 끊을경우 429에러 발생함 , Error: ETELEGRAM: 429 Too Many Requests: retry after 599)
-    await new Promise((resolve)=>setTimeout(resolve,1000)); // 개발용 1초 있다가 닫음 (그냥 에러 나는걸로..)
+    await new Promise((resolve)=>setTimeout(resolve,660000)); // 11분 후 닫음 (텔레그램은 연결 후 10분 이내 끊을경우 429에러 발생함 , Error: ETELEGRAM: 429 Too Many Requests: retry after 599)
+    // await new Promise((resolve)=>setTimeout(resolve,1000)); // 개발용 1초 있다가 닫음 (그냥 에러 나는걸로..)
 
     await browser.close();
     // bot.sendMessage(chatId, "닫습니다");
