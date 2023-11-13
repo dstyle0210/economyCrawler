@@ -6,10 +6,10 @@ github의 action을 이용해서, 경제지표, 경제뉴스 텔레그램으로 
 - 블룸버그 : 블로그
   
 ```powershell
-> Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy RemoteSigned
 ```
 
 ```console
-> git config --global user.name dstyle0210
-> git config --global user.email dstyle0210@gmail.com
+git config --global user.name dstyle0210
+git config --global user.email dstyle0210@gmail.com
 ```
