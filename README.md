@@ -1,3 +1,7 @@
+2024.07.25
+본 프로젝트는 [myCrawler](https://github.com/dstyle0210/myCrawler) 로 폐기통합 됨.
+
+
 # economyCrawler
 github의 action을 이용해서, 경제지표, 경제뉴스 텔레그램으로 받기.
 - 오전 11시 (cron 0 3 * * 1-5) / github가 UTC+0 을 기준함.
